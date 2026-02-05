@@ -1,103 +1,100 @@
+Perfeito — abaixo está o **README de NLP revisado**, com os **links no mesmo padrão visual e estrutural do README de MLOps**, mantendo o tom técnico e institucional.
+
+---
+
 # NLP — Workshop de Processamento de Linguagem Natural
 
-Este diretório contém os materiais do módulo de **Processamento de Linguagem Natural (NLP)** do workshop, organizados em cinco capítulos sequenciais, cada um representando um bloco temático do cronograma oficial do evento.
+Este diretório contém os materiais do módulo de **Processamento de Linguagem Natural (NLP)** do workshop, organizados em cinco capítulos sequenciais (**CH1 a CH5**). Cada capítulo corresponde a um bloco temático do cronograma oficial do evento e reúne conteúdos teóricos, notebooks, códigos, experimentos e artefatos práticos reutilizáveis.
 
-O objetivo deste módulo é conduzir os participantes desde os **fundamentos clássicos do NLP** até **arquiteturas modernas baseadas em Transformers, embeddings, recuperação de informação e sistemas de Retrieval-Augmented Generation (RAG)**, combinando teoria, prática e construção de sistemas aplicáveis em cenários reais.
+O objetivo deste módulo é conduzir os participantes desde os **fundamentos clássicos do NLP** até **arquiteturas modernas baseadas em Transformers, embeddings, recuperação de informação e sistemas de Retrieval-Augmented Generation (RAG)**, promovendo uma progressão estruturada entre teoria, prática e aplicações em cenários reais.
 
-Cada pasta corresponde a um tema específico e contém conteúdos teóricos, notebooks, códigos, exemplos práticos e artefatos reutilizáveis nos módulos seguintes.
-
----
-
-## Estrutura do Módulo de NLP
-
-### Credenciamento e Abertura
-
-Horário: 8h30 - 10h
-Este período contempla o credenciamento, coffee break inicial e a abertura institucional, incluindo falas de professores convidados e contextualização do workshop.
+Os materiais produzidos neste módulo também servem como base para o módulo de **MLOps**, no qual os modelos e pipelines desenvolvidos são preparados para implantação e operação em produção.
 
 ---
 
-## CH1 — Introdução ao NLP Clássico, Tokenização e Embeddings
+## 🗓️ Cronograma & Estrutura do Módulo
 
-Horário: 10h - 11h30
-Link para a pasta:
-📁 `nlp/CH1`
-[https://github.com/seu-repo/workshop-nlp-mlops/tree/main/nlp/CH1](https://github.com/seu-repo/workshop-nlp-mlops/tree/main/nlp/CH1)
+### 🕣 8h30 - 10h — Credenciamento e Abertura
 
-Este capítulo aborda os fundamentos do Processamento de Linguagem Natural sob a perspectiva de métodos clássicos, incluindo técnicas iniciais de representação textual, tokenização e a evolução dos embeddings. São exploradas estratégias tradicionais de pré-processamento de texto, construção de vocabulários, segmentação linguística e vetorização semântica.
-
-O capítulo também apresenta o papel histórico dessas técnicas no surgimento do NLP moderno, estabelecendo as bases conceituais necessárias para compreender arquiteturas mais avançadas nos capítulos seguintes.
+Este período contempla o credenciamento, coffee break inicial e a abertura institucional, incluindo falas de professores convidados e a contextualização geral do workshop.
 
 ---
 
-## CH2 — Redes Recorrentes, Atenção e Transformers
+### 🕙 10h - 11h30 — Tema 01
 
-Horário: 11h30 - 12h30
-Link para a pasta:
-📁 `nlp/CH2`
-[https://github.com/seu-repo/workshop-nlp-mlops/tree/main/nlp/CH2](https://github.com/seu-repo/workshop-nlp-mlops/tree/main/nlp/CH2)
+## 🔹 CH1 — Introdução ao NLP Clássico, Tokenização e Embeddings
 
-Este capítulo aprofunda o estudo de modelos neurais sequenciais, abordando redes recorrentes e os desafios associados ao aprendizado de dependências de longo prazo em linguagem natural.
+📁 [`nlp/CH1`](./CH1)
 
-São introduzidos os mecanismos de atenção como uma solução para limitações estruturais das RNNs, culminando na apresentação dos Transformers como arquitetura dominante no NLP moderno. O conteúdo inclui fundamentos conceituais, visualização de fluxos de atenção e exemplos práticos de uso de modelos Transformer.
+**Conteúdo abordado:**
+Fundamentos do Processamento de Linguagem Natural sob a perspectiva de métodos clássicos, incluindo técnicas iniciais de representação textual, tokenização, normalização linguística e vetorização. O capítulo apresenta a evolução histórica das abordagens simbólicas para representações distribuídas, estabelecendo a base conceitual para os modelos modernos.
 
 ---
 
-## CH3 — Embeddings Avançados, Recuperação de Informação e Bancos Vetoriais
+### 🕦 11h30 - 12h30 — Tema 02
 
-Horário: 14h - 15h30
-Link para a pasta:
-📁 `nlp/CH3`
-[https://github.com/seu-repo/workshop-nlp-mlops/tree/main/nlp/CH3](https://github.com/seu-repo/workshop-nlp-mlops/tree/main/nlp/CH3)
+## 🔹 CH2 — Redes Recorrentes, Atenção e Transformers
 
-Este capítulo foca no aprofundamento em modelos modernos de embeddings, incluindo representações contextuais e vetores semânticos de alta dimensionalidade.
+📁 [`nlp/CH2`](./CH2)
 
-O conteúdo aborda técnicas de recuperação de informação baseadas em similaridade vetorial, construção de pipelines de busca semântica e uso de bancos vetoriais como infraestrutura para armazenamento e consulta eficiente de embeddings. Também são introduzidos os conceitos fundamentais de Retrieval-Augmented Generation como padrão arquitetural para sistemas inteligentes.
+**Conteúdo abordado:**
+Estudo aprofundado de modelos neurais sequenciais, incluindo redes recorrentes e suas limitações no tratamento de dependências longas. Introdução aos mecanismos de atenção e sua importância na evolução dos modelos de linguagem, culminando na compreensão teórica e prática da arquitetura Transformer.
 
 ---
 
-## CH4 — Construção de Bancos Vetoriais e Sistemas de RAG
-
-Horário: 15h30 - 16h30
-Link para a pasta:
-📁 `nlp/CH4`
-[https://github.com/seu-repo/workshop-nlp-mlops/tree/main/nlp/CH4](https://github.com/seu-repo/workshop-nlp-mlops/tree/main/nlp/CH4)
-
-Este capítulo é predominantemente prático e orientado à implementação de sistemas funcionais baseados em recuperação semântica.
-
-Os participantes constroem um banco vetorial completo, implementam pipelines de ingestão de dados, realizam consultas semânticas e integram os resultados a modelos de linguagem para formar um sistema de Retrieval-Augmented Generation operacional. O foco está na transição entre conceitos teóricos e sistemas aplicáveis em produção.
+### 🕧 12h30 - 14h — Intervalo (Almoço)
 
 ---
 
-## CH5 — Aplicações Práticas e Consolidação em NLP
+### 🕑 14h - 15h30 — Tema 03
 
-Horário: 16h30 - 17h30
-Link para a pasta:
-📁 `nlp/CH5`
-[https://github.com/seu-repo/workshop-nlp-mlops/tree/main/nlp/CH5](https://github.com/seu-repo/workshop-nlp-mlops/tree/main/nlp/CH5)
+## 🔹 CH3 — Embeddings Avançados, Recuperação de Informação e Bancos Vetoriais
 
-Este capítulo consolida os conhecimentos adquiridos ao longo do módulo por meio de aplicações práticas, integração de componentes e desenvolvimento de soluções completas baseadas em NLP.
+📁 [`nlp/CH3`](./CH3)
 
-O foco está na construção de pipelines end-to-end, validação de sistemas desenvolvidos, experimentação com modelos modernos e discussão sobre aplicações reais em produtos, pesquisa e sistemas corporativos.
+**Conteúdo abordado:**
+Aprofundamento em embeddings modernos, incluindo representações contextuais. Implementação de pipelines de recuperação semântica, exploração de técnicas de similaridade vetorial e introdução à infraestrutura de bancos vetoriais como suporte para sistemas inteligentes baseados em busca semântica.
+
+---
+
+### 🕞 15h30 - 16h30 — Tema 04
+
+## 🔹 CH4 — Construção de Bancos Vetoriais e Sistemas de RAG
+
+📁 [`nlp/CH4`](./CH4)
+
+**Conteúdo abordado:**
+Implementação prática de bancos vetoriais, ingestão de documentos, indexação semântica e consulta por similaridade. Integração desses mecanismos a modelos de linguagem para a construção de sistemas funcionais de Retrieval-Augmented Generation, com foco em aplicações próximas a ambientes reais.
+
+---
+
+### 🕟 16h30 - 17h30 — Tema 05
+
+## 🔹 CH5 — Aplicações Práticas e Consolidação em NLP
+
+📁 [`nlp/CH5`](./CH5)
+
+**Conteúdo abordado:**
+Integração de todos os componentes desenvolvidos ao longo do módulo para a construção de pipelines completos de NLP. Avaliação da qualidade dos sistemas criados, experimentação com modelos modernos, validação de resultados e discussão sobre aplicações práticas em pesquisa, produtos e sistemas corporativos.
 
 ---
 
 ## Objetivo do Módulo de NLP
 
-O módulo de NLP foi estruturado para capacitar os participantes a compreender, implementar e aplicar técnicas modernas de Processamento de Linguagem Natural em cenários reais.
+O módulo de NLP foi estruturado para capacitar os participantes a compreender, implementar e aplicar técnicas modernas de Processamento de Linguagem Natural de forma progressiva e aplicada.
 
-Ao final do percurso, espera-se que o participante seja capaz de explicar desde os fundamentos clássicos da área até arquiteturas modernas baseadas em Transformers, embeddings avançados, recuperação semântica e sistemas RAG, além de possuir experiência prática na construção desses sistemas.
+Ao final do percurso, espera-se que o participante seja capaz de transitar desde os fundamentos clássicos da área até arquiteturas modernas baseadas em Transformers, embeddings avançados, recuperação semântica e sistemas RAG, além de possuir experiência prática na construção desses sistemas.
 
 ---
 
 ## Integração com o Módulo de MLOps
 
-Os artefatos produzidos neste módulo são reutilizados no módulo de MLOps, onde os modelos, pipelines e sistemas desenvolvidos passam por etapas de **deploy, orquestração, escalabilidade, automação e produção**.
+Os artefatos gerados neste módulo são utilizados no módulo de **MLOps**, onde passam por etapas de **deploy, automação, versionamento, escalabilidade, monitoramento e operação em produção**.
 
-Essa integração permite que o participante experimente todo o ciclo de vida de um sistema de IA, desde a modelagem linguística até a operação em ambientes reais.
+Essa integração permite que os participantes experimentem o **ciclo completo de vida de sistemas de IA**, desde a modelagem linguística até a implantação e manutenção em ambientes reais.
 
 ---
 
 ## Observação sobre a Estrutura das Pastas
 
-Cada capítulo contém código-fonte, notebooks, exemplos práticos, datasets de apoio e documentação própria. Recomenda-se seguir a progressão sequencial dos capítulos para melhor aproveitamento do conteúdo.
+Cada capítulo contém notebooks, scripts, datasets auxiliares, exemplos práticos e documentação própria. Recomenda-se seguir a progressão sequencial dos capítulos para garantir melhor compreensão conceitual e aproveitamento técnico do conteúdo.
