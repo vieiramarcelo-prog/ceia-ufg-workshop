@@ -48,12 +48,9 @@ Sua missão é escolher um (ou mais) dos desafios abaixo e implementar no códig
 * **Desafio 1: Implementar *Chunking* (Fatiamento de Texto).** Atualmente, inserimos o parágrafo inteiro no banco. E se os documentos tivessem 10 páginas? O LLM estouraria o limite de tokens.
 * *Sua tarefa:* Use bibliotecas como LangChain ou LlamaIndex para fatiar textos longos em pedaços de tamanho fixo (ex: 500 caracteres) com uma sobreposição (*overlap*) de 50 caracteres para não perder o contexto entre as quebras.
 
-
 * **Desafio 2: Engenharia de Prompt Avançada.**
 Nosso prompt atual é extremamente básico.
 * *Sua tarefa:* Melhore o prompt no script `03_rag.py`. Adicione regras estritas (ex: *"Responda sempre em bullet points"*, *"Se a resposta não estiver no texto, responda EXATAMENTE: 'Informação não encontrada na base'"*). Adicione exemplos (*Few-Shot Prompting*) dentro da instrução.
-
-
 
 ### Nível 2: Otimização de Busca
 
@@ -61,19 +58,15 @@ Nosso prompt atual é extremamente básico.
 A busca puramente semântica às vezes ignora nomes próprios ou siglas específicas.
 * *Sua tarefa:* Pesquise sobre *Sparse Vectors* (como o BM25). Tente configurar o Qdrant para aceitar tanto a busca por embeddings (densa) quanto a busca por palavras-chave (esparsa) ao mesmo tempo.
 
-
 * **Desafio 4: Adicionar um Re-Ranker (Cross-Encoder).**
 Buscar muitos documentos é rápido, mas impreciso.
 * *Sua tarefa:* Traga 10 resultados do Qdrant usando o modelo MiniLM rápido, mas adicione uma etapa intermediária usando um modelo mais pesado (Cross-Encoder, ex: `cross-encoder/ms-marco-MiniLM-L-6-v2`) para reordenar esses 10 resultados com alta precisão antes de enviar os 3 melhores para o LLM. Avalie como isso afeta o NDCG no script `02_metricas.py`!
-
-
 
 ### Nível 3: Arquitetura e Engenharia de Software
 
 * **Desafio 5: Rodar 100% Local (Open Source).**
 Atualmente o repositório consome a API paga da OpenAI.
 * *Sua tarefa:* Substitua a chamada da OpenAI por uma requisição local. Use ferramentas como o **Ollama** ou **LM Studio** para rodar um modelo menor na sua máquina (ex: `Llama-3-8B`, `Phi-3`, ou `Gemma`) e consuma a API local dele no script.
-
 
 * **Desafio 6: Streaming de Resposta na API.**
 O FastAPI atual espera o LLM gerar o texto inteiro antes de devolver para o usuário.
