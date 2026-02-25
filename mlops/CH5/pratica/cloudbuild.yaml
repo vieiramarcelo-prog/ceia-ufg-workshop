@@ -49,6 +49,7 @@ steps:
 
     waitFor: ['build-image']  # Espera build terminar
 
+  
 # ========== IMAGES ==========
 # Lista de imagens que serão armazenadas no Artifact Registry
 
