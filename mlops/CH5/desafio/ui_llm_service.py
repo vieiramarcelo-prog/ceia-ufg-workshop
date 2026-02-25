@@ -18,12 +18,16 @@ Como rodar:
 # TODO: importe as bibliotecas necessárias
 # Dica: você vai precisar de streamlit e requests
 
+import streamlit as st
+import requests
+import os
 
 # ------------------------------------------------------------
 # CONFIGURAÇÃO DA PÁGINA
 # Dica: st.set_page_config() deve ser a primeira chamada Streamlit
 # ------------------------------------------------------------
-
+st.set_page_config(page_title="LLM ChatBot", layout="wide")
+                   
 # TODO: configure o título da página e um ícone (opcional)
 
 
@@ -32,7 +36,8 @@ Como rodar:
 # ------------------------------------------------------------
 
 # TODO: adicione um título e uma breve descrição do que este chat faz
-
+st.title("🤖 Interface de Serviço LLM")
+st.caption("Conectado ao Cloud Run + Gemini. Assistente virtual para responder todas suas perguntas.")
 
 # ------------------------------------------------------------
 # URL DA API
@@ -40,7 +45,9 @@ Como rodar:
 #       Leia de uma variável de ambiente com os.getenv().
 #       Defina um valor padrão para facilitar testes locais.
 # ------------------------------------------------------------
-
+API_URL = os.getenv("https://api-blackbox-68490838153.us-central1.run.app"," http://localhost:8080")
+ENDPOINT = f"https://api-blackbox-68490838153.us-central1.run.app/chat"
+st.info(f"Conectado em: https://api-blackbox-68490838153.us-central1.run.app")
 # TODO: leia a variável de ambiente API_URL
 
 
@@ -56,8 +63,14 @@ Como rodar:
 # ------------------------------------------------------------
 
 # TODO: inicialize st.session_state["messages"] se necessário
-
-
+if "messages" not in st.session_state:
+    st.session_state.messages = []
+with st.sidebar:
+    st.header("Configurações")
+    if st.button("Limpar Histórico"):
+        st.session_state["messages"] = []
+        st.rerun()
+    st.caption(f"Conectado em: {API_URL}")
 # ------------------------------------------------------------
 # EXIBIÇÃO DO HISTÓRICO
 # Renderize as mensagens já existentes na tela.
@@ -66,6 +79,9 @@ Como rodar:
 
 # TODO: percorra st.session_state["messages"] e exiba cada uma
 
+for message in st.session_state.messages:
+    with st.chat_message(message["role"]):
+        st.markdown(message["content"])
 
 # ------------------------------------------------------------
 # FUNÇÃO DE CHAMADA À API
@@ -89,12 +105,46 @@ Como rodar:
 
 # TODO: implemente a função call_llm
 
+def call_llm(messages):
+    payload ={
+            "messages": [{"role": "user", "content": prompt}],
+            "model": "gemini-2.5-flash"
+            }
+    try:
+            response = requests.post(
+                ENDPOINT,
+                json=payload,
+                timeout=30 
+            ) 
+            
+            if response.status_code == 200:
+                return response.json().get("message").get("content")
+            else:
+                return f"Erro na API ({response.status_code}): {response.text}"
+            
+    except requests.exceptions.RequestException as e:
+        return f"Falha de conexão: {e}"
 
 # ------------------------------------------------------------
 # CAIXA DE ENTRADA DO USUÁRIO
 # Dica: st.chat_input() fica fixo na parte inferior da tela
 #       e retorna o texto digitado (ou None se vazio).
 # ------------------------------------------------------------
+if prompt := st.chat_input("Olá! Como posso ajudar você hoje?"):
+
+    st.session_state.messages.append({"role": "user", "content": prompt})
+
+    with st.chat_message("user"):
+        st.markdown(prompt)
+
+    with st.chat_message("assistant"):
+        with st.spinner("O Assistente está processando..."):
+
+            resposta_llm = call_llm(st.session_state.messages)
+            
+            st.markdown(resposta_llm)
+    
+    st.session_state.messages.append({"role": "assistant", "content": resposta_llm})
 
 # TODO: capture a entrada do usuário com st.chat_input()
 
