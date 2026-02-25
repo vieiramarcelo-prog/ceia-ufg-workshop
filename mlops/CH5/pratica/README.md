@@ -320,3 +320,4 @@ Ao final do processo você terá:
 - Um serviço LLM rodando no **Cloud Run**, acessível via HTTPS
 - Um **pipeline de CI/CD** configurado: qualquer mudança na pasta `mlops/CH5/` e push na `main` resulta em um novo deploy automático
 - A **documentação interativa** da API disponível em `https://sua-url.run.app/docs`
+aaaaaa
